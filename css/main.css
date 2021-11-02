@@ -74,7 +74,7 @@ html body .container .title h2 {
 
 .sectionStart .bgStart {
   position: absolute;
-  background-image: url(/img/bg-start.jpg);
+  background-image: url(../img/bg-start.jpg);
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -473,7 +473,7 @@ html body .container .title h2 {
 }
 
 .sectionAbout .content .img {
-  background-image: url(/img/photo-alison.png);
+  background-image: url(../img/photo-alison.png);
   background-size: cover;
   background-position: center;
   -webkit-filter: grayscale(100%);

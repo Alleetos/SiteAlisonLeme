@@ -12,7 +12,7 @@
 
     .bgStart {
         position: absolute;
-        background-image: url(/img/bg-start.jpg);
+        background-image: url(../img/bg-start.jpg);
         background-size: cover;
         background-attachment: fixed;
         width: 100%;
@@ -321,7 +321,7 @@
         }
 
         .img {
-            background-image: url(/img/photo-alison.png);
+            background-image: url(../img/photo-alison.png);
             background-size: cover;
             background-position: center;
             filter:grayscale(100%);
