@@ -1,0 +1,844 @@
+@import 'animations';
+@import 'base';
+@import 'extends';
+@import 'fonts';
+@import 'mixins';
+@import 'variables';
+
+.sectionStart {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    .bgStart {
+        position: absolute;
+        background-image: url(/img/bg-start.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100%;
+        opacity: 70%;
+        transition: 1000ms;
+
+        @include cell {
+            &.navBarMobile {
+                opacity: 50%;
+            }
+        }    
+    }
+
+    .hamburguer {
+        display: none;
+        z-index: 3;
+    
+        @include cell {
+            position: fixed;
+            height: 1.5rem;
+            margin: 2rem 0 0 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+    
+            &.navBarMobile  {
+                width: 20px;
+                margin-left: 7rem;
+                z-index: 3;
+            }
+    
+            .lineMobile {
+                width: 30px;
+                height: .1rem;
+                background-color: #ffffffff;
+                box-shadow: .1rem .1rem 10px #000;
+                transition: 1500ms;
+            }
+        }
+    
+        &.navBarMobile {
+            .lineMobile {
+                width: 23px;
+            }
+    
+            #line1 {
+                transform: rotate(50deg) translate(.3rem, .7rem);
+            }
+    
+            #line2 {
+                display: none;
+            }
+    
+            #line3 {
+                transform: rotate(-50deg) translate(.4rem, -.7rem);
+            }
+        }
+    }
+
+    .aside {
+        z-index: 2;
+        position: fixed;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        padding: 40px 10px;
+        background-color: $color-secondary-transparent;
+        transition: 1000ms;
+    
+        @include notebook {
+            padding: 30px 5px;
+        }
+    
+        @include tablet {
+            padding: 20px 5px;
+        }
+    
+        @include cell {
+            padding: 20px 0px;
+            height: 70%;
+            border-radius: 0 10px 10px 0;
+            left: -100%;
+    
+            &.navBarMobile {
+                left: 0;
+            }
+        }
+    
+        &.mudaCorMenuBege {
+            background-color: $color-primary-transparent;
+            padding: 40px 0px;
+    
+            @include notebook {
+                padding: 30px 0px;
+            }
+    
+            @include tablet {
+                padding: 20px 0px;
+            }
+        }
+    
+        &.mudaCorMenuPreto {
+            background-color: $color-secondary-transparent;
+            padding: 40px 0px;
+    
+            @include notebook {
+                padding: 30px 0px;
+            }
+    
+            @include tablet {
+                padding: 20px 0px;
+            }
+        }
+    
+        h1 {
+            text-transform: uppercase;
+        }
+    
+        .menu {
+            list-style: none;
+    
+            li {
+                margin: 45px 0;
+    
+                @include notebook {
+                    margin: 40px 0;
+                }
+        
+                @include cell {
+                    margin: 25px 0;
+                }
+    
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: #ffffffff;
+                    font-weight: 600;
+                    padding-bottom: 5px;
+                    padding: 10px;
+                    border-radius: 3px;
+                    transition: 200ms;
+                    font-size: .8rem;
+    
+                    &:hover {
+                        border-bottom: 2px solid $color-primary;
+                        background-color: $color-secondary;
+                    }
+                }
+            }
+        }
+    
+        .social {
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            @include cell {
+                height: 110px;
+            }
+    
+            .icon-social {
+                width: 30px;
+                cursor: pointer;
+                transition: 200ms;
+        
+                @include cell {
+                    width: 25px;
+                }
+    
+                &:hover {
+                    border: 1px solid #ffffffff;
+                }
+            }
+        }
+    }
+
+    .intro {
+        position: absolute;
+        left: 15%;
+        top: 28%;
+        width: 35%;
+
+        @include notebook {
+           left: 20%;
+           top: 20%;
+        }
+
+        @include tablet {
+            left: 30%;
+            width: 50%;
+        }
+
+        @include cell {
+            width: 294px;
+            height: 240px;
+            left: 50%;
+            top: 50%;
+            margin-left: -147px;
+            margin-top: -120px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: .3px .3px 4px #ffffffff;
+
+            @include notebook {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+
+            @include tablet {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 50px;
+            color: $letter-color;
+            font-weight: 600;
+            text-shadow: .2px .2px 10px black;
+
+            @include notebook {
+                font-size: 1.3rem;
+             }
+     
+             @include tablet {
+                 font-size: 1.1rem;
+             }
+     
+             @include cell {
+                 font-size: 1rem;
+             }
+        }
+
+        #textIntro {
+
+            &:after {
+                content: '●';
+                font-size: 1rem;
+                color: black;
+            }
+        }
+    }
+}
+
+.sectionAbout {
+    background-color: $color-secondary;
+    padding-bottom: 10rem;
+
+    .box-title {
+        @extend %box-title;
+        @include color-boxTitle($color-primary, #ffffffff);
+
+        @include notebook {
+            font-size: 3rem;
+        }
+    
+        @include tablet {
+            font-size: 2.5rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 2.8rem;
+
+        @include notebook {
+            font-size: 2.5rem;
+        }
+    
+        @include tablet {
+            font-size: 2.2rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            justify-content: end;
+        }
+
+        @include cell {
+            justify-content: center;
+        }
+
+        .img {
+            background-image: url(/img/photo-alison.png);
+            background-size: cover;
+            background-position: center;
+            filter:grayscale(100%);
+            width: 30%;
+            height: 600px;
+            border: 10px solid $color-primary;
+            border-radius: 2000px 0px 0px 2000px;
+            margin-right: 25px;
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        .aboutMe {
+            width: 40%;
+            margin-left: 25px;
+
+            @include tablet {
+                width: 70%;
+                margin: 0 25px 0 0;
+            }
+
+            @include cell {
+                width: 85%;
+                margin: 0;
+            }
+
+            h3 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+
+                @include notebook {
+                    font-size: 1.9rem;
+                    letter-spacing: 1.8px;
+                }
+                @include cell {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+            }
+
+            p {
+                line-height: 25px;
+                margin: 20px 0;
+            
+                @include notebook {
+                    line-height: 23px;
+                    margin: 17px 0;
+                }
+            }
+        }
+
+        .contatos {
+            display: flex;
+            justify-content: space-between;
+
+            span:last-child {
+                font-size: .8rem;
+            }
+
+            a {
+                color: $color-primary;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.sectionExperiences {
+    position: relative;
+    padding-bottom: 10rem;
+
+    .bgExperiences {
+        background-color: $color-primary;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 80%;
+        z-index: -1;
+    }
+
+    .box-title {
+        @extend %box-title;
+        @include color-boxTitle($color-secondary, $color-primary);
+
+        @include notebook {
+            font-size: 3rem;
+        }
+    
+        @include tablet {
+            font-size: 2.5rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 2.8rem;
+
+        @include notebook {
+            font-size: 2.5rem;
+        }
+    
+        @include tablet {
+            font-size: 2.2rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    .experiences {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-auto-rows: minmax(300px, auto);
+        row-gap: 5rem;
+        grid-template-areas: 
+            's1 s1 s1 E1 E1 E1 E1 s2 s2 s2 E4 E4 E4 E4 s3 s3'
+            's4 s4 E2 E2 E2 E2 s5 s5 s5 s5 s5 E5 E5 E5 E5 s6'
+            's7 s7 s7 E3 E3 E3 E3 s8 s8 s8 E6 E6 E6 E6 s9 s9'
+        ;
+
+        @include notebook {
+            grid-template-columns: repeat(9, 1fr);
+            column-gap: 2rem;
+            grid-template-areas:
+            's1 s1 E1 E1 E1 E4 E4 E4 s3'
+            's4 s4 E2 E2 E2 E5 E5 E5 s6'
+            's7 s7 E3 E3 E3 E6 E6 E6 s9'
+        ;
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-areas:
+            's1 s1 E1 E1 E1 E1 s2'
+            's3 s3 E2 E2 E2 E2 s4'
+            's5 s5 E3 E3 E3 E3 s6'
+            's7 s7 E4 E4 E4 E4 s8'
+            's9 s9 E5 E5 E5 E5 s10'
+            's11 s11 E6 E6 E6 E6 s12'
+        ;
+        }
+
+        @include cell {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .experience {
+            background-color: $color-primary-transparent;
+            padding: 50px 40px 20px 40px;
+            border-radius: 100px 100px 0 0;
+            box-shadow: .1px .1px 5px #ffffffff;
+
+            @include cell {
+                padding: 30px 20px;
+                margin-bottom: 38px;
+            }
+
+            &:hover {
+                box-shadow: .1px .1px 10px $color-secondary;
+            }
+
+            &:nth-child(1) {
+                grid-area: E1;
+            }
+            &:nth-child(2) {
+                grid-area: E2;
+            }
+            &:nth-child(3) {
+                grid-area: E3;
+            }
+            &:nth-child(4) {
+                grid-area: E4;
+            }
+            &:nth-child(5) {
+                grid-area: E5;
+            }
+            &:nth-child(6) {
+                grid-area: E6;
+            }
+    
+            .headerExperience {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+    
+                i {
+                    font-size: 2.5rem;
+                    margin-right: 5px;
+                }
+    
+                 h3 {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    margin: 0 0 0 5px;
+                }
+            }
+
+            p {
+                letter-spacing: .1rem;
+                line-height: 1.5rem;
+            }
+            
+            /*Animações*/
+            &[data-anime] {
+                opacity: 0;
+                transition: 700ms;
+            }
+
+            &[data-anime = "left"] {
+                transform: translate3d(-100px, 0, 0);
+            }
+
+            &[data-anime = "right"] {
+                transform: translate3d(100px, 0, 0);
+            }
+
+            &[data-anime].animate {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+}
+
+.sectionPortfolio {
+    background-color: $color-secondary;
+    padding-bottom: 10rem;
+    
+    .box-title {
+        @extend %box-title;
+        @include color-boxTitle($color-primary, #ffffffff);
+
+        @include notebook {
+            font-size: 3rem;
+        }
+    
+        @include tablet {
+            font-size: 2.5rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 2.8rem;
+
+        @include notebook {
+            font-size: 2.5rem;
+        }
+    
+        @include tablet {
+            font-size: 2.2rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    .portfolio {
+
+        @include notebook {
+            padding-left: 50px;
+        }
+
+        @include cell {
+            padding: 0;
+        }
+
+        .items {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            border: 2px solid $color-primary;
+            padding: 10px 0;
+
+            @include cell {
+                width: 90%;
+                flex-wrap: wrap;
+            }
+
+            .item {
+                background-color: #ffffffff;
+                color: #111;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 300ms ease;
+
+                @include cell {
+                    margin: 5px;
+                }
+
+                &.active, &:hover {
+                    background-color: $color-primary;
+                    color: #ffffffff;
+                }
+            }
+        }
+
+        .gallery {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+
+            @include cell {
+                width: 90%;
+            }
+
+            .image {
+                width: calc(100% / 4);
+                padding: 5px;
+
+                @include notebook {
+                    width: calc(100% / 3);
+                }
+
+                @include tablet {
+                    width: calc(100% / 2);
+                }
+
+                @include cell {
+                    width: 100%;
+                }
+
+                &.hide {
+                    display: none;
+                }
+
+                &.show {
+                    animation: animate 500ms ease;
+                }
+
+                span {
+                    display: flex;
+                    width: 100%;
+                    overflow: hidden;
+                    box-shadow: .2px .2px 5px $color-primary;
+                    
+                    img {
+                        width: 100%;
+                        vertical-align: middle;
+                        transition: all 300ms ease;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .preview-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        max-width: 1000px;
+        width: 100%;
+        background-color: #ffffffff;
+        color: $color-secondary;
+        border-radius: 3px;
+        padding: 0 5px 5px 5px;
+        z-index: 5;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        transition: all 500ms ease;
+        
+        &.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 15px 13px 10px;
+
+            .titleDetails {
+                display: flex;
+                font-size: 1.2rem;
+
+                p {
+                    margin-left: 5px;
+                    font-weight: 600;
+                }
+            }
+
+            .icon {
+                font-size: 1.4rem;
+                color: $color-primary;
+                cursor: pointer;
+            }
+        }
+
+        .image-box {
+            display: flex;
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 0  0 3px 3px;
+            }
+        }
+    }
+
+    .shadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.4);
+
+        &.show {
+            display: block;
+        }
+    }
+}
+
+.sectionContact {
+    background-color: $color-primary;
+    padding-bottom: 10rem;
+    
+    .box-title {
+        @extend %box-title;
+        @include color-boxTitle($color-secondary, $color-primary);
+
+        @include notebook {
+            font-size: 3rem;
+        }
+    
+        @include tablet {
+            font-size: 2.5rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 2.8rem;
+
+        @include notebook {
+            font-size: 2.5rem;
+        }
+    
+        @include tablet {
+            font-size: 2.2rem;
+        }
+    
+        @include cell {
+            font-size: 2rem;
+        }
+    }
+
+    .contact {
+        max-width: 80%;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 30px 15px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: $color-secondary-transparent;
+        box-shadow: 0 0 15px $color-secondary;
+
+        h4 {
+            margin: 20px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        ul {
+
+            li {
+                list-style: none;
+                margin-top: 15px;
+
+                a {
+                    text-decoration: none;
+                    color: #ffffffff;
+                    font-size: 1.1rem;
+
+                    &:hover {
+                        text-decoration:underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background-color: $color-secondary-transparent;
+}

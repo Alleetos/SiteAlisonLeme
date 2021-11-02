@@ -1,0 +1,22 @@
+@mixin color-boxTitle ($background-color, $color) {
+    background-color: $background-color;
+    color: $color;
+}
+
+@mixin notebook {
+    @media(max-width: $large-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media(max-width: $tablet-width) {
+        @content;
+    }
+}
+
+@mixin cell {
+    @media(max-width: $cell-width) {
+        @content;
+    }
+}
