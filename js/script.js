@@ -187,7 +187,9 @@ onload = ()=>{ // once window loaded
     //selecting all required elements
 const previewBox = document.querySelector('.preview-box'),
 previewImg = previewBox.querySelector('img'),
-categoryName = previewBox.querySelector('p');
+categoryName = previewBox.querySelector('.category');
+infomation = previewBox.querySelector('.information');
+linkProject = previewBox.querySelector('#link-project')
 closeIcon = previewBox.querySelector('.icon');
 shadow = document.querySelector('.shadow');
 
@@ -198,6 +200,10 @@ function preview(element) {
     previewImg.src = selectedPrevImg; // colocando a imgame que o usuario clicou no preview
     let selectedImgCategory = element.getAttribute('data-name') // pegando o valor o atributo que está no 'data-name' que o usuario clicou
     categoryName.innerText = selectedImgCategory; // passandddo o valor do atributo clocado para o campo categoria.
+    let selectedInformationCategory = element.getAttribute('data-information');
+    infomation.innerText = selectedInformationCategory;
+    let selectedUrlCategory = element.getAttribute('data-url');
+    linkProject.href = selectedUrlCategory;
     previewBox.classList.add('show'); // show the preview box
     shadow.classList.add('show'); // add classe show para deixar o fundo escuro
     
@@ -226,7 +232,7 @@ function getDistanceFromTheTop(element) {
 function scrollToSection(event) {
     event.preventDefault();
     const distanceFromTheTop = getDistanceFromTheTop(event.target);
-    smoothScrollTo(0, distanceFromTheTop, 900);
+    smoothScrollTo(0, distanceFromTheTop, 1000);
 }
 
 // function nativeScroll(distanceFromTheTop) {

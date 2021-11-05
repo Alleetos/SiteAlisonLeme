@@ -542,7 +542,7 @@ html body .container .title h2 {
   }
 }
 
-.sectionAbout .content .contatos {
+.sectionAbout .content .aboutMe .contatos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,11 +551,11 @@ html body .container .title h2 {
           justify-content: space-between;
 }
 
-.sectionAbout .content .contatos span:last-child {
+.sectionAbout .content .aboutMe .contatos span:last-child {
   font-size: .8rem;
 }
 
-.sectionAbout .content .contatos a {
+.sectionAbout .content .aboutMe a {
   color: #826049;
   font-weight: 600;
 }
@@ -627,6 +627,7 @@ html body .container .title h2 {
   grid-auto-rows: minmax(300px, auto);
   row-gap: 5rem;
       grid-template-areas: 's1 s1 s1 E1 E1 E1 E1 s2 s2 s2 E4 E4 E4 E4 s3 s3' 's4 s4 E2 E2 E2 E2 s5 s5 s5 s5 s5 E5 E5 E5 E5 s6' 's7 s7 s7 E3 E3 E3 E3 s8 s8 s8 E6 E6 E6 E6 s9 s9';
+  padding: 5px 0;
 }
 
 @media (max-width: 1200px) {
@@ -674,6 +675,7 @@ html body .container .title h2 {
 .sectionExperiences .experiences .experience:hover {
   -webkit-box-shadow: 0.1px 0.1px 10px #121212;
           box-shadow: 0.1px 0.1px 10px #121212;
+  border-radius: 80px 80px 10px 10px;
 }
 
 .sectionExperiences .experiences .experience:nth-child(1) {
@@ -856,7 +858,7 @@ html body .container .title h2 {
   color: #111;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border-radius: 10px;
   cursor: pointer;
   -webkit-transition: all 300ms ease;
@@ -893,7 +895,9 @@ html body .container .title h2 {
 
 .sectionPortfolio .portfolio .gallery .image {
   width: calc(100% / 4);
-  padding: 5px;
+  padding: 5px 10px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 @media (max-width: 1200px) {
@@ -929,20 +933,18 @@ html body .container .title h2 {
   display: flex;
   width: 100%;
   overflow: hidden;
-  -webkit-box-shadow: 0.2px 0.2px 5px #826049;
-          box-shadow: 0.2px 0.2px 5px #826049;
+  -webkit-box-shadow: 0 0 5px #826049;
+          box-shadow: 0 0 5px #826049;
 }
 
 .sectionPortfolio .portfolio .gallery .image span img {
   width: 100%;
   vertical-align: middle;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 
-.sectionPortfolio .portfolio .gallery .image span img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.sectionPortfolio .portfolio .gallery .image:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .sectionPortfolio .preview-box {
@@ -993,9 +995,20 @@ html body .container .title h2 {
   font-size: 1.2rem;
 }
 
-.sectionPortfolio .preview-box .details .titleDetails p {
+.sectionPortfolio .preview-box .details .titleDetails .category {
   margin-left: 5px;
   font-weight: 600;
+}
+
+.sectionPortfolio .preview-box .details .information {
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.sectionPortfolio .preview-box .details a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #826049;
 }
 
 .sectionPortfolio .preview-box .details .icon {
@@ -1118,7 +1131,7 @@ html body .container .title h2 {
 
 .footer {
   text-align: center;
-  padding: 40px 0;
+  padding: 30px 0;
   background-color: #1212126c;
 }
 /*# sourceMappingURL=main.css.map */
