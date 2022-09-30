@@ -197,9 +197,9 @@ shadow = document.querySelector('.shadow');
 function preview(element) {
     document.querySelector('body').style.overflow = 'hidden'; // quando o usuario clicar em uma imagem, tirar a barra de rolagem.
     let selectedPrevImg = element.querySelector('img').src; // pegando a url da imagem que o usuario clicou.
-    previewImg.src = selectedPrevImg; // colocando a imgame que o usuario clicou no preview
+    previewImg.src = selectedPrevImg; // colocando a imagem que o usuario clicou no preview
     let selectedImgCategory = element.getAttribute('data-name') // pegando o valor o atributo que está no 'data-name' que o usuario clicou
-    categoryName.innerText = selectedImgCategory; // passandddo o valor do atributo clocado para o campo categoria.
+    categoryName.innerText = selectedImgCategory; // passando o valor do atributo colocado para o campo categoria.
     let selectedInformationCategory = element.getAttribute('data-information');
     infomation.innerText = selectedInformationCategory;
     let selectedUrlCategory = element.getAttribute('data-url');
